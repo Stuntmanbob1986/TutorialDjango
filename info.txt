@@ -1,0 +1,17 @@
+create django Project:
+1) choose directory
+2) enter directory in cmd/powershell
+2) django-admin startproject mysite
+
+run project:
+python manage.py runserver
+
+run project on another port:
+python manage.py runserver 5050
+
+stop server:
+ctrl + c
+
+create app (im Projektverzeichnis hier: mysite)
+python manage.py startapp main
+main ist App-name
