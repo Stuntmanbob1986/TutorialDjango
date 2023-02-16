@@ -7,6 +7,7 @@ from .forms import CreateNewList
 # source: https://www.youtube.com/watch?v=sm1mokevMWk
 # 1:17:33
 # 2022_09_16: 1:42:52
+# 2023_02_16: rewatch cap. 5 - simple forms (1:42:52)
 # Create your views here.
 
 
@@ -39,7 +40,7 @@ def create(response):
         form = CreateNewList(response.POST)
         if form.is_valid():
             n = form.cleaned_data["name"]
-            t = ToDoList(name=n)
+            t = ToDoList(name=n)    # create a new ToDoList with name from form
             t.save()
 
         return HttpResponseRedirect("/%i" %t.id)
