@@ -8,6 +8,7 @@ from .forms import CreateNewList
 # 1:17:33
 # 2022_09_16: 1:42:52
 # 2023_02_16: rewatch cap. 5 - simple forms (1:42:52)
+# 2023_ß2_17: cap 6 (custom forms) finished (1:57:07)
 # Create your views here.
 
 
@@ -16,7 +17,7 @@ def index(response, id):
 
     if response.method == "POST":
         print(response.POST)
-        if response.POST.get("save"):
+        if response.POST.get("save"):   # save is name of button
             for item in ls.item_set.all():
                 if response.POST.get("c" + str(item.id)) == "clicked":
                     item.complete = True
@@ -26,7 +27,12 @@ def index(response, id):
                 item.save()
 
         elif response.POST.get("newItem"):
-            pass
+            txt = response.POST.get("new")
+
+            if len(txt) > 2:
+                ls.item_set.create(text=txt, complete=False)
+            else:
+                print("invalid")
 
     return render(response, "main/list.html", {"ls": ls})
 
