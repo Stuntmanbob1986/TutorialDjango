@@ -11,6 +11,9 @@ from .forms import CreateNewList
 # 2023_ß2_17: cap 6 (custom forms) finished (1:57:07)
 # Create your views here.
 
+# when accessing the admin Dashboard via /admin
+# username: cg, pw = test1234
+
 
 def index(response, id):
     ls = ToDoList.objects.get(id=id)
