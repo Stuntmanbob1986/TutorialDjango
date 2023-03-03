@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', v.register, name="register"), # path will be linked to function
     path('', include("main.urls")),
+    path('', include("django.contrib.auth.urls")),
 ]

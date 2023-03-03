@@ -14,6 +14,7 @@ from .forms import CreateNewList
 # when accessing the admin Dashboard via /admin
 # username: cg, pw = test1234
 
+# username: cg2, pw tset4321
 
 def index(response, id):
     ls = ToDoList.objects.get(id=id)
